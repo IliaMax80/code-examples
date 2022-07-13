@@ -1,3 +1,4 @@
+//Основной скрипт проекта в нем создаеться задача. В файле описан класс Физических велечин и их свойстива.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
