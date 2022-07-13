@@ -1,3 +1,4 @@
+//РљРѕРјРїРѕРЅРµРЅС‚ РґР»СЏ РїРµСЂРµРјРµС‰РµРЅРёР№ С‚Р°Р±Р»РёС‡РµРє РјС‹С€РєРѕР№
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ using UnityEngine;
 
 public class Taskability : MonoBehaviour
 {
-    //Наверно основные переменые 
+    //ГЌГ ГўГҐГ°Г­Г® Г®Г±Г­Г®ГўГ­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г»ГҐ 
     public Vector2 StartMax;
     public Vector2 StartMin;
     //public Vector2 indentUD;
@@ -19,7 +20,7 @@ public class Taskability : MonoBehaviour
     public  bool bl, bufbool;
     public string sing;
     
-    //Публичные переменые 
+    //ГЏГіГЎГ«ГЁГ·Г­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г»ГҐ 
     public float z;
     public bool limitation = false;
     public string Name;
@@ -31,7 +32,7 @@ public class Taskability : MonoBehaviour
     public LineRenderer line;
     public bool NotSuit = false;
 
-    //Непубличне переменые 
+    //ГЌГҐГЇГіГЎГ«ГЁГ·Г­ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г»ГҐ 
     private GameObject bufObject;
     private spavnTablet Script;
     private Ray ray;
@@ -74,7 +75,7 @@ public class Taskability : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Тык?
+        //Г’Г»ГЄ?
         if (Input.GetMouseButtonDown(0)) {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit)) {
@@ -102,7 +103,7 @@ public class Taskability : MonoBehaviour
                 }
             }
         }
-        //Не тык
+        //ГЌГҐ ГІГ»ГЄ
         if (Input.GetMouseButtonUp(0))
         {
             //Debug.Log(Time.time - OldTime);
@@ -135,7 +136,7 @@ public class Taskability : MonoBehaviour
         {
             l = true;
             //transform.Translate(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed, 0);
-            //Таскабильность
+            //Г’Г Г±ГЄГ ГЎГЁГ«ГјГ­Г®Г±ГІГј
             buf = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             buf.x -= smeh.x;
             buf.y -= smeh.y;
@@ -150,7 +151,7 @@ public class Taskability : MonoBehaviour
             else
             {
                 StartVector = buf;
-                //Ограничители
+                //ГЋГЈГ°Г Г­ГЁГ·ГЁГІГҐГ«ГЁ
                 if (StartVector.x < Min.x)
                 {
                     StartVector = new Vector3(Min.x, StartVector.y, StartVector.z);
@@ -292,7 +293,7 @@ public class Taskability : MonoBehaviour
     }
     
 
-    //Карутина для авторастоновки 
+    //ГЉГ Г°ГіГІГЁГ­Г  Г¤Г«Гї Г ГўГІГ®Г°Г Г±ГІГ®Г­Г®ГўГЄГЁ 
 
     public void Scip()
     {
@@ -306,7 +307,7 @@ public class Taskability : MonoBehaviour
         bl = false;
         stop = false;
     } 
-    public void ActiveСursor()
+    public void ActiveГ‘ursor()
     {
         bl = true;
     }
@@ -364,7 +365,7 @@ public class Taskability : MonoBehaviour
         {
             GetComponent<OperatorScript>().transizeLate();
             transform.position = new Vector3(StartVector.x, StartVector.y, StartVector.z);
-            // не нужен так как given и так под размер подстраиваеться:  + GetComponent<ScalingTablet>().smeshX
+            // Г­ГҐ Г­ГіГ¦ГҐГ­ ГІГ ГЄ ГЄГ ГЄ given ГЁ ГІГ ГЄ ГЇГ®Г¤ Г°Г Г§Г¬ГҐГ° ГЇГ®Г¤Г±ГІГ°Г ГЁГўГ ГҐГІГјГ±Гї:  + GetComponent<ScalingTablet>().smeshX
         }
         else
         {
@@ -390,7 +391,7 @@ public class Taskability : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    //Мелочные функции
+    //ГЊГҐГ«Г®Г·Г­Г»ГҐ ГґГіГ­ГЄГ¶ГЁГЁ
     public void InputSmeh(Vector2 a)
     {
         smeh = a;
