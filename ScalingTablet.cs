@@ -1,3 +1,4 @@
+//Р­С‚РѕС‚ РєРѕРґ С„РѕСЂРјРёСЂРѕРІР°Р» С‚Р°Р±Р»РёС‡РєРё РёС… С„РЅРµС€РЅРёР№ РІРёРґ Рё СЃР»РµРґРёР» Р·Р° СЂР°РїСЃРїРѕР»РѕР¶РµРЅРёРµРј РІР°Р¶РЅС‹С… СЌР»РµРјРµРЅС‚Р°С… РІРѕ РІСЂРµРјСЏ РёР·Р·РјРµРЅРёРµРЅРёСЏ СЂР°Р·РјРµСЂРѕРІ
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,8 +30,8 @@ public class ScalingTablet : MonoBehaviour
     public ScalingFrame frame;
     public GameObject fractionObject;
     private Vector3 OldR, OldL;
-    //TODO: Доработай деление а там за кнопки и ввод текста у намбера и нотетаблички
-    //ну и по итогу можно кончено всех кнопок редезайн сделать особенно что касательно меню нашего
+    //TODO: Г„Г®Г°Г ГЎГ®ГІГ Г© Г¤ГҐГ«ГҐГ­ГЁГҐ Г  ГІГ Г¬ Г§Г  ГЄГ­Г®ГЇГЄГЁ ГЁ ГўГўГ®Г¤ ГІГҐГЄГ±ГІГ  Гі Г­Г Г¬ГЎГҐГ°Г  ГЁ Г­Г®ГІГҐГІГ ГЎГ«ГЁГ·ГЄГЁ
+    //Г­Гі ГЁ ГЇГ® ГЁГІГ®ГЈГі Г¬Г®Г¦Г­Г® ГЄГ®Г­Г·ГҐГ­Г® ГўГ±ГҐГµ ГЄГ­Г®ГЇГ®ГЄ Г°ГҐГ¤ГҐГ§Г Г©Г­ Г±Г¤ГҐГ«Г ГІГј Г®Г±Г®ГЎГҐГ­Г­Г® Г·ГІГ® ГЄГ Г±Г ГІГҐГ«ГјГ­Г® Г¬ГҐГ­Гѕ Г­Г ГёГҐГЈГ®
     public float rL, rW;
     public void Start()
     {
@@ -121,7 +122,7 @@ public class ScalingTablet : MonoBehaviour
         Debug.Log("replacementSaze: (R:" + R + ", L: " + L + ", Rp: " + Rp + ")");
         Vector3 v;
 
-        //Работа с размерами
+        //ГђГ ГЎГ®ГІГ  Г± Г°Г Г§Г¬ГҐГ°Г Г¬ГЁ
         if (R.x == 0)
         {
             v = L;
@@ -153,13 +154,13 @@ public class ScalingTablet : MonoBehaviour
             return v;
         }
 
-        //Получение итоговых размеров 
+        //ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЁГІГ®ГЈГ®ГўГ»Гµ Г°Г Г§Г¬ГҐГ°Г®Гў 
         float l = R.x + L.x + 6.2f + Rp;
         float w = v.y + 1;
         float zA = v.z - 0.001f;
         Debug.Log("length: " + l + ", width: " + w);
 
-        //Передача их в form и frame и т.д.
+        //ГЏГҐГ°ГҐГ¤Г Г·Г  ГЁГµ Гў form ГЁ frame ГЁ ГІ.Г¤.
         size = new Vector3(l, w, zA);
 
         form.length = l;
@@ -174,7 +175,7 @@ public class ScalingTablet : MonoBehaviour
         frame.z = z;
 
         boxCollider.size = new Vector3(l + R2 + 0.05f, w + R2 / 2 + 0.05f, zA);
-        //работа со смещением
+        //Г°Г ГЎГ®ГІГ  Г±Г® Г±Г¬ГҐГ№ГҐГ­ГЁГҐГ¬
         smeshX = (L.x - R.x - Rp) / 2f;
         txt.transform.localPosition = new Vector3(smeshX, txt.transform.localPosition.y);
         
