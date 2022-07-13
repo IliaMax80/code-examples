@@ -1,3 +1,6 @@
+//Этот скрипт взять из игры разработаной в Unity, а если точнее с моего личного проекта связяяного с Физикой, в двух словах это интерактивный и бесконечный тренажор
+//Этот компонент отвечал за основные метода тригеров в оператарах которые можно было вставлять друг в друга 
+//как это реализовано во многих графических языках программировнаие, что нужно для решению задач 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +28,7 @@ public class Given : MonoBehaviour
     {
         fixing = false;
         Table = null;
-        StartX = Controller.paper�lip.transform.position.x - transform.position.x;
+        StartX = Controller.paperÑlip.transform.position.x - transform.position.x;
         Controller.Given.add(gameObject);
     }
 
@@ -34,7 +37,7 @@ public class Given : MonoBehaviour
     {
 
     }
-    //��������� � ������
+    //Âõîæäåíèå â òðèãåð
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("!");
@@ -52,7 +55,7 @@ public class Given : MonoBehaviour
   
                     if(notDistroy)
                     {
-                        transform.position = new Vector3(Controller.paper�lip.transform.position.x - StartX + (other.GetComponent<ScalingTablet>().length - 9)/2, transform.position.y, transform.position.z);
+                        transform.position = new Vector3(Controller.paperÑlip.transform.position.x - StartX + (other.GetComponent<ScalingTablet>().length - 9)/2, transform.position.y, transform.position.z);
                     }
                     if (!other.GetComponent<Taskability>().bl)
                     {
@@ -74,7 +77,7 @@ public class Given : MonoBehaviour
                         }
                     }
                     //Debug.Log("!!2");
-                    //Debug.Log("�������");
+                    //Debug.Log("Êàñàíèå");
                     script = Table.GetComponent<Taskability>();
                     script.stop = true;
                     script.stopPosition = transform.position;
@@ -109,7 +112,7 @@ public class Given : MonoBehaviour
             
         }
     }
-    //�����
+    //Âûõîä
     private void OnTriggerExit(Collider other)
     {
         if (!fixing)
@@ -135,7 +138,7 @@ public class Given : MonoBehaviour
                     {
                         root.newTablet(side, Table);
                     }
-                    //Debug.Log("��� �������");
+                    //Debug.Log("Íåò êàñàíèÿ");
                     script = other.GetComponent<Taskability>();
                     script.stop = false;
                     check = false;
@@ -148,7 +151,7 @@ public class Given : MonoBehaviour
         }
 
     }
-    //������ ����������
+    //Ðó÷íîå ïðèñâîåíèå
     public void scip(GameObject a)
     {
         Table = a;
